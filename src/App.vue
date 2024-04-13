@@ -39,7 +39,7 @@
        <span class="text-[20px] font-600">{{ product.price }}$</span>
       </div>
       <div class="flex justify-center items-center gap-[10px]">
-       <v-button class="bg-[blue] text-[white]">More</v-button>
+       <more-modal product="product" />
        <v-button @click="addToCart(product)" class="bg-[black] text-[white]">{{
         store.cart.includes(product) ? 'Added' : 'Add'
        }}</v-button>
@@ -49,7 +49,6 @@
     <div v-else class="text-[20px] text-center">Loading...</div>
    </v-container>
   </main>
-  <more-modal />
   <the-footer />
  </the-wrapper>
 </template>

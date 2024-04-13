@@ -1,5 +1,9 @@
 <template>
- <div class="fixed top-[100px] left-0 border">tset</div>
+ <v-button class="bg-[blue] text-[white]">More</v-button>
+
+ <teleport to="body">
+  <div class="fixed top-[100px] left-0 border">{{ product?.title }}</div>
+ </teleport>
 </template>
 
 <script lang="ts">
