@@ -36,5 +36,8 @@ export const useMagaz = defineStore('magaz', {
   showModal() {
    this.moreModal.show = true;
   },
+  closeModal() {
+   this.moreModal.show = false;
+  },
  },
 });
