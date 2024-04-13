@@ -40,7 +40,6 @@
       </div>
       <div class="flex justify-center items-center gap-[10px]">
        <button class="" type="button">More</button>
-       <button class="" type="button">Add</button>
       </div>
      </div>
     </div>
