@@ -4,6 +4,7 @@ import TheWrapper from './commons/TheWrapper.vue';
 import VContainer from './commons/VContainer.vue';
 import VButton from './elements/VButton.vue';
 import MoreModal from './MoreModal.vue';
+import CardProduct from './CardProduct.vue';
 
 export default [
  TheHeader,
@@ -12,4 +13,5 @@ export default [
  VContainer,
  VButton,
  MoreModal,
+ CardProduct,
 ];

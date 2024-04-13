@@ -7,6 +7,10 @@ export const useMagaz = defineStore('magaz', {
   return {
    products: [] as Array<Product>,
    cart: [] as Array<Product>,
+   moreModal: {
+    show: false,
+    data: null,
+   },
   };
  },
  getters: {
