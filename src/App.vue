@@ -38,15 +38,6 @@ export default defineComponent({
  mounted() {
   this.store.loadProducts;
  },
- methods: {
-  addToCart(data) {
-   this.store.addToCart(data);
-  },
-  showModal(data) {
-   this.popup.show = true;
-   this.popup.data = data;
-  },
- },
 });
 </script>
 

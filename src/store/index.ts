@@ -33,5 +33,8 @@ export const useMagaz = defineStore('magaz', {
     this.cart = this.cart.filter((item) => item !== product);
    }
   },
+  showModal() {
+   this.moreModal.show = true;
+  },
  },
 });
