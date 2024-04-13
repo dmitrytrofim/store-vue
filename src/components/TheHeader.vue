@@ -18,12 +18,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useMagaz } from '@/store';
+import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'the-header',
  setup() {
-  const store = useMagaz();
+  const store = useStore();
   return { store };
  },
 });

@@ -43,12 +43,12 @@
 <script lang="ts">
 import { PropType, defineComponent } from 'vue';
 import { Product } from '@/model';
-import { useMagaz } from '@/store';
+import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'more-modal',
  setup() {
-  const store = useMagaz();
+  const store = useStore();
   return { store };
  },
  props: {

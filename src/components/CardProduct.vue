@@ -43,12 +43,12 @@
 <script lang="ts">
 import { Product } from '@/model';
 import { PropType, defineComponent } from 'vue';
-import { useMagaz } from '@/store';
+import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'card-product',
  setup() {
-  const store = useMagaz();
+  const store = useStore();
   return { store };
  },
  props: {

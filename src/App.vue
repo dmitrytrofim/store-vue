@@ -14,27 +14,19 @@
    </v-container>
   </main>
   <the-footer />
-  <more-modal :show="popup.show" :product="popup.data" />
+  <more-modal :show="store.moreModal.show" :product="store.moreModal.data" />
   <the-cart />
  </the-wrapper>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useMagaz } from './store';
+import { useStore } from './store';
 
 export default defineComponent({
  setup() {
-  const store = useMagaz();
+  const store = useStore();
   return { store };
- },
- data() {
-  return {
-   popup: {
-    show: false,
-    data: null,
-   },
-  };
  },
  mounted() {
   this.store.loadProducts;

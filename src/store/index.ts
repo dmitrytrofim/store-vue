@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import axios from 'axios';
 import { Product } from '@/model';
 
-export const useMagaz = defineStore('magaz', {
+export const useStore = defineStore('magaz', {
  state: () => {
   return {
    products: [] as Array<Product>,
