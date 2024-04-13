@@ -1,9 +1,7 @@
 <template>
- <v-button class="bg-[blue] text-[white]">More</v-button>
-
- <teleport to="body">
-  <div class="test">{{ product?.title }}</div>
- </teleport>
+ <div class="test">
+  {{ product?.title }}
+ </div>
 </template>
 
 <script lang="ts">
