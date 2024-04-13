@@ -39,7 +39,7 @@
        <span class="text-[20px] font-600">{{ product.price }}$</span>
       </div>
       <div class="flex justify-center items-center gap-[10px]">
-       <v-button @click="showModal" class="bg-[blue] text-[white]"
+       <v-button @click="showModal(product)" class="bg-[blue] text-[white]"
         >More</v-button
        >
        <v-button @click="addToCart(product)" class="bg-[black] text-[white]">{{
@@ -80,8 +80,9 @@ export default defineComponent({
   addToCart(data) {
    this.store.addToCart(data);
   },
-  showModal() {
+  showModal(data) {
    this.popup.show = true;
+   this.popup.data = data;
   },
  },
 });

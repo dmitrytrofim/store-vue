@@ -1,7 +1,7 @@
 <template>
- <div v-if="show" class="fixed top-0 left-0 w-full h-dvh border z-[2000]">
+ <div v-if="show" class="fixed top-0 left-0 w-full h-dvh z-[2000]">
   <div class="">
-   <p class=""></p>
+   <p class="">{{ product?.title }}</p>
    <img class=" " src=" " alt="" loading="lazy" />
    <p class=""></p>
   </div>
