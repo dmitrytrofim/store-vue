@@ -9,7 +9,7 @@ export const useMagaz = defineStore('magaz', {
    cart: [] as Array<Product>,
    moreModal: {
     show: false,
-    data: null,
+    data: {} as Product,
    },
   };
  },
@@ -33,11 +33,14 @@ export const useMagaz = defineStore('magaz', {
     this.cart = this.cart.filter((item) => item !== product);
    }
   },
-  showModal() {
+  showModal(data) {
    this.moreModal.show = true;
+   this.moreModal.data = data;
+   document.body.classList.add('j-lock');
   },
   closeModal() {
    this.moreModal.show = false;
+   document.body.classList.remove('j-lock');
   },
  },
 });

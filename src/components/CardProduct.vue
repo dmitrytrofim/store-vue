@@ -11,9 +11,9 @@
    alt=""
    loading="lazy"
   />
-  <div class="w-full grow mb-[10px]">
+  <div class="w-full grow">
    <p
-    class="relative max-h-[50px] overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full after:shadow-[0px_-30px_24px_-20px_#fff_inset] after:z-20 pointer-events-none"
+    class="relative max-h-[50px] overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full after:shadow-[0px_-40px_24px_-20px_#fff_inset] after:z-20 pointer-events-none"
    >
     <span class="relative z-10">{{ product?.description }}</span>
    </p>
@@ -30,7 +30,7 @@
    <span class="text-[20px] font-600">{{ product?.price }}$</span>
   </div>
   <div class="flex justify-center items-center gap-[10px]">
-   <v-button @click="store.showModal" class="bg-[blue] text-[white]"
+   <v-button @click="store.showModal(product)" class="bg-[blue] text-[white]"
     >More</v-button
    >
    <v-button @click="addCard(product)" class="bg-[black] text-[white]">{{
