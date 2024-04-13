@@ -1,6 +1,6 @@
 <template>
  <div
-  v-if="show"
+  v-if="store.moreModal.show"
   class="fixed top-0 left-0 w-full h-dvh flex bg-[rgba(0,0,0,0.5)] backdrop-blur-sm z-[2000]"
  >
   <div
@@ -37,9 +37,14 @@
 <script lang="ts">
 import { PropType, defineComponent } from 'vue';
 import { Product } from '@/model';
+import { useMagaz } from '@/store';
 
 export default defineComponent({
  name: 'more-modal',
+ setup() {
+  const store = useMagaz();
+  return { store };
+ },
  props: {
   show: Boolean,
   product: Object as PropType<Product>,

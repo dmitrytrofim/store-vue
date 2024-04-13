@@ -7,7 +7,7 @@
      <card-product
       v-for="product in store.products"
       :key="product.id"
-      product="product"
+      :product="product"
      />
     </div>
     <div v-else class="text-[20px] text-center">Loading...</div>
