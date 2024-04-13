@@ -6,7 +6,7 @@ export const useMagaz = defineStore('magaz', {
  state: () => {
   return {
    products: [] as Array<Product>,
-   cart: [],
+   cart: [] as Array<Product>,
   };
  },
  getters: {
@@ -19,6 +19,14 @@ export const useMagaz = defineStore('magaz', {
    } catch (error) {
     console.error(error);
    }
+  },
+ },
+ actions: {
+  addToCart(product) {
+   if (this.cart.includes(product)) {
+    return (this.cart = this.cart.filter((item) => item !== product));
+   }
+   if (!this.cart.includes(product)) this.cart.unshift(product);
   },
  },
 });

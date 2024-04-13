@@ -40,7 +40,9 @@
       </div>
       <div class="flex justify-center items-center gap-[10px]">
        <button class="" type="button">More</button>
-       <v-button class="bg-[black] text-[white]">Add</v-button>
+       <v-button @click="addToCart(product)" class="bg-[black] text-[white]">{{
+        store.cart.includes(product) ? 'Added' : 'Add'
+       }}</v-button>
       </div>
      </div>
     </div>
@@ -62,6 +64,11 @@ export default defineComponent({
  },
  mounted() {
   this.store.loadProducts;
+ },
+ methods: {
+  addToCart(data) {
+   this.store.addToCart(data);
+  },
  },
 });
 </script>
