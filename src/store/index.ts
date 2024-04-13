@@ -23,10 +23,11 @@ export const useMagaz = defineStore('magaz', {
  },
  actions: {
   addToCart(product) {
-   if (this.cart.includes(product)) {
-    return (this.cart = this.cart.filter((item) => item !== product));
+   if (!this.cart.includes(product)) {
+    this.cart.unshift(product);
+   } else {
+    this.cart = this.cart.filter((item) => item !== product);
    }
-   if (!this.cart.includes(product)) this.cart.unshift(product);
   },
  },
 });
