@@ -40,6 +40,7 @@
       </div>
       <div class="flex justify-center items-center gap-[10px]">
        <button class="" type="button">More</button>
+       <v-button class="bg-[black] text-[white]">Add</v-button>
       </div>
      </div>
     </div>
