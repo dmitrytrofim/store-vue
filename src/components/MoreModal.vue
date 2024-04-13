@@ -1,9 +1,7 @@
 <template>
- <v-button class="bg-[blue] text-[white]">More</v-button>
-
- <teleport to="body">
-  <div class="fixed top-[100px] left-0 border">{{ product?.title }}</div>
- </teleport>
+ <div v-if="modalOpen" class="fixed top-0 left-0 border z-[2000]">
+  {{ product?.title }}
+ </div>
 </template>
 
 <script lang="ts">
@@ -14,6 +12,16 @@ export default defineComponent({
  name: 'more-modal',
  props: {
   product: Object as PropType<Product>,
+ },
+ data() {
+  return {
+   modalOpen: false,
+  };
+ },
+ methods: {
+  showModal() {
+   this.modalOpen = true;
+  },
  },
 });
 </script>
