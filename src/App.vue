@@ -49,6 +49,7 @@
     <div v-else class="text-[20px] text-center">Loading...</div>
    </v-container>
   </main>
+  <more-modal />
   <the-footer />
  </the-wrapper>
 </template>

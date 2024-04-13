@@ -1,7 +1,5 @@
 <template>
- <div class="test">
-  {{ product?.title }}
- </div>
+ <div class="fixed top-[100px] left-0 border">tset</div>
 </template>
 
 <script lang="ts">
