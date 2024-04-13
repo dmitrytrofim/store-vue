@@ -11,6 +11,7 @@ import { Product } from '@/model';
 export default defineComponent({
  name: 'more-modal',
  props: {
+  show: Boolean,
   product: Object as PropType<Product>,
  },
  data() {

@@ -50,7 +50,7 @@
    </v-container>
   </main>
   <the-footer />
-  <more-modal />
+  <more-modal :show="popup.show" :product="popup.data" />
  </the-wrapper>
 </template>
 
@@ -62,6 +62,14 @@ export default defineComponent({
  setup() {
   const store = useMagaz();
   return { store };
+ },
+ data() {
+  return {
+   popup: {
+    show: false,
+    data: null,
+   },
+  };
  },
  mounted() {
   this.store.loadProducts;
