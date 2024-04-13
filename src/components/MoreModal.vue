@@ -1,7 +1,5 @@
 <template>
- <div v-if="modalOpen" class="fixed top-0 left-0 border z-[2000]">
-  {{ product?.title }}
- </div>
+ <div v-if="show" class="fixed top-0 left-0 border z-[2000]">test</div>
 </template>
 
 <script lang="ts">
@@ -13,16 +11,6 @@ export default defineComponent({
  props: {
   show: Boolean,
   product: Object as PropType<Product>,
- },
- data() {
-  return {
-   modalOpen: false,
-  };
- },
- methods: {
-  showModal() {
-   this.modalOpen = true;
-  },
  },
 });
 </script>
