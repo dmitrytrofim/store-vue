@@ -1,5 +1,7 @@
 <template>
- <header class="">
+ <header
+  class="fixed w-full bg-[rgba(255,255,255,0.7)] backdrop-blur-sm z-[1000]"
+ >
   <v-container>
    <div class="flex justify-between py-[10px]">
     <h1 class="text-center text-[30px] font-700">Store-vue</h1>

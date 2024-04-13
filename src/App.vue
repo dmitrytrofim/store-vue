@@ -1,7 +1,7 @@
 <template>
  <the-wrapper>
   <the-header />
-  <main class="pt-[30px]">
+  <main class="pt-[90px]">
    <v-container>
     <div v-if="store.products.length > 0" class="grid grid-cols-4 gap-[20px]">
      <div
