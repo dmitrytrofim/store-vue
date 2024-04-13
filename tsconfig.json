@@ -44,6 +44,9 @@
    ],
    "@hooks/*": [
     "src/hooks/*"
+   ],
+   "@elements/*": [
+    "src/components/elements/*"
    ]
   },
   "noImplicitAny": false,

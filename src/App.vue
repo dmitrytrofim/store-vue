@@ -20,7 +20,7 @@
       />
       <div class="w-full grow mb-[10px]">
        <p
-        class="relative max-h-[50px] overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full after:shadow-[0px_-30px_24px_-20px_#fff_inset] after:z-20"
+        class="relative max-h-[50px] overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full after:shadow-[0px_-30px_24px_-20px_#fff_inset] after:z-20 pointer-events-none"
        >
         <span class="relative z-10">{{ product.description }}</span>
        </p>
