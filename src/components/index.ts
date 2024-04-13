@@ -1,10 +1,11 @@
-import TheHeader from './TheHeader.vue';
-import TheFooter from './TheFooter.vue';
-import TheWrapper from './commons/TheWrapper.vue';
-import VContainer from './commons/VContainer.vue';
-import VButton from './elements/VButton.vue';
-import MoreModal from './MoreModal.vue';
-import CardProduct from './CardProduct.vue';
+import TheHeader from '@components/TheHeader.vue';
+import TheFooter from '@components/TheFooter.vue';
+import TheWrapper from '@components/commons/TheWrapper.vue';
+import VContainer from '@components/commons/VContainer.vue';
+import VButton from '@components/elements/VButton.vue';
+import MoreModal from '@components/MoreModal.vue';
+import CardProduct from '@components/CardProduct.vue';
+import TheCart from '@components/TheCart.vue';
 
 export default [
  TheHeader,
@@ -14,4 +15,5 @@ export default [
  VButton,
  MoreModal,
  CardProduct,
+ TheCart,
 ];
