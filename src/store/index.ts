@@ -28,6 +28,7 @@ export const useMagaz = defineStore('magaz', {
  actions: {
   addToCart(product) {
    if (!this.cart.includes(product)) {
+    product.buy = 1;
     this.cart.unshift(product);
    } else {
     this.cart = this.cart.filter((item) => item !== product);
