@@ -33,9 +33,11 @@
    <v-button @click="store.showModal(product)" class="bg-[blue] text-[white]"
     >More</v-button
    >
-   <v-button @click="addCard(product)" class="bg-[black] text-[white]">{{
-    store.cart.products.includes(product!) ? 'Added' : 'Add'
-   }}</v-button>
+   <v-button
+    @click="store.addToCart(product)"
+    class="bg-[black] text-[white]"
+    >{{ store.cart.products.includes(product!) ? 'Added' : 'Add' }}</v-button
+   >
   </div>
  </div>
 </template>
@@ -53,11 +55,6 @@ export default defineComponent({
  },
  props: {
   product: Object as PropType<Product>,
- },
- methods: {
-  addCard(product) {
-   this.store.addToCart(product);
-  },
  },
 });
 </script>

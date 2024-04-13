@@ -28,6 +28,13 @@
        alt=""
       />
      </span>
+     <v-button
+      @click="store.addToCart(product)"
+      class="bg-[black] text-[white] text-[20px]"
+      >{{
+       store.cart.products.includes(product!) ? 'Added' : 'Add to cart'
+      }}</v-button
+     >
      <span class="text-[30px] font-600"
       >{{ store.moreModal.data?.price }}$</span
      >
