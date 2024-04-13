@@ -34,7 +34,7 @@
     >More</v-button
    >
    <v-button @click="addCard(product)" class="bg-[black] text-[white]">{{
-    store.cart.includes(product!) ? 'Added' : 'Add'
+    store.cart.products.includes(product!) ? 'Added' : 'Add'
    }}</v-button>
   </div>
  </div>

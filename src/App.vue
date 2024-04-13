@@ -15,6 +15,7 @@
   </main>
   <the-footer />
   <more-modal :show="popup.show" :product="popup.data" />
+  <the-cart />
  </the-wrapper>
 </template>
 

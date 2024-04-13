@@ -9,7 +9,7 @@
      class="w-[30px] h-[30px] bg-[url('/src/assets/img/svg/bag.svg')] bg-no-repeat bg-cover bg-center pt-[7px]"
      type="button"
     >
-     {{ store.cart.length }}
+     {{ store.cart.products.length }}
     </button>
    </div>
   </v-container>
