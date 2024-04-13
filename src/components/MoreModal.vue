@@ -65,7 +65,7 @@ export default defineComponent({
 <style scoped>
 .more-enter-active,
 .more-leave-active {
- transition: opacity 0.2s ease;
+ transition: opacity 0.1s ease;
 }
 
 .more-enter-from,
