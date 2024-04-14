@@ -3,7 +3,7 @@
   <div
    @click="store.closeModal"
    v-if="store.moreModal.show"
-   class="fixed top-0 left-0 w-full h-dvh flex bg-[rgba(0,0,0,0.5)] backdrop-blur-sm z-[2000] overflow-auto p-[10px]"
+   class="fixed top-0 left-0 w-full h-dvh flex bg-[rgba(0,0,0,0.5)] z-[2000] overflow-auto p-[10px]"
   >
    <div
     @click.stop

@@ -47,8 +47,12 @@ export const useStore = defineStore('magaz', {
    document.body.classList.remove('j-lock');
   },
   showCart() {
+   document.body.classList.add('j-lock');
    this.cart.show = true;
   },
-  closeCart() {},
+  closeCart() {
+   document.body.classList.remove('j-lock');
+   this.cart.show = false;
+  },
  },
 });
