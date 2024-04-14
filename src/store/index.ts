@@ -7,7 +7,7 @@ export const useStore = defineStore('magaz', {
   return {
    products: [] as Array<Product>,
    cart: {
-    modal: false,
+    show: false,
     products: [] as Array<Product>,
    },
    moreModal: {
@@ -45,6 +45,9 @@ export const useStore = defineStore('magaz', {
   closeModal() {
    this.moreModal.show = false;
    document.body.classList.remove('j-lock');
+  },
+  showCart() {
+   this.cart.show = true;
   },
  },
 });
