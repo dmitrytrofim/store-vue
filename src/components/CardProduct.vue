@@ -49,9 +49,10 @@ import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'card-product',
- setup() {
-  const store = useStore();
-  return { store };
+ data() {
+  return {
+   store: useStore(),
+  };
  },
  props: {
   product: Object as PropType<Product>,

@@ -58,9 +58,10 @@ import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'more-modal',
- setup() {
-  const store = useStore();
-  return { store };
+ data() {
+  return {
+   store: useStore(),
+  };
  },
  props: {
   show: Boolean,

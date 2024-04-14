@@ -24,9 +24,10 @@ import { defineComponent } from 'vue';
 import { useStore } from './store';
 
 export default defineComponent({
- setup() {
-  const store = useStore();
-  return { store };
+ data() {
+  return {
+   store: useStore(),
+  };
  },
  mounted() {
   this.store.loadProducts;

@@ -17,9 +17,10 @@ import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'the-cart',
- setup() {
-  const store = useStore();
-  return { store };
+ data() {
+  return {
+   store: useStore(),
+  };
  },
 });
 </script>
