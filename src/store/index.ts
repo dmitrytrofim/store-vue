@@ -49,5 +49,6 @@ export const useStore = defineStore('magaz', {
   showCart() {
    this.cart.show = true;
   },
+  closeCart() {},
  },
 });
