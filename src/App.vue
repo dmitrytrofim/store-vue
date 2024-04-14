@@ -1,7 +1,7 @@
 <template>
  <the-wrapper>
   <the-header />
-  <main class="pt-[90px]">
+  <main class="pt-[85px]">
    <v-container>
     <div v-if="store.products.length > 0" class="grid grid-cols-4 gap-[20px]">
      <card-product
