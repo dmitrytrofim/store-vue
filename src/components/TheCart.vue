@@ -20,9 +20,36 @@
        />
        <p class="">{{ product.title }}</p>
       </div>
+      <div class="flex justify-center items-center gap-[5px]">
+       <button
+        @click="store.removeProduct(product)"
+        class="w-[20px] h-[20px] bg-[black] rounded-full text-[white]"
+        type="button"
+       >
+        &#8722;
+       </button>
+       <span class="text-[20px]">{{ product.buy }}</span>
+       <button
+        @click="store.addProduct(product)"
+        class="w-[20px] h-[20px] bg-[black] rounded-full text-[white]"
+        type="button"
+       >
+        &#43;
+       </button>
+      </div>
      </li>
     </ul>
-    <span>Total:</span>
+    <div class="flex justify-between items-center">
+     <span class="text-[20px] font-600"
+      >Total: {{ store.calcProductCart }}$</span
+     >
+     <button
+      v-if="store.cart.products.length > 0"
+      class="font-600 text-[20px] text-[white] p-[5px_10px] bg-[green] rounded-[5px]"
+     >
+      To Pay
+     </button>
+    </div>
     <button
      @click="store.closeCart"
      class="absolute top-[8px] right-[15px]"

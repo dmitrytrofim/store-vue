@@ -27,6 +27,15 @@ export const useStore = defineStore('magaz', {
     console.error(error);
    }
   },
+  calcProductCart(state) {
+   const result = state.cart.products.reduce(
+    (acc: number, cur: Product): any => {
+     return acc + (cur.buy ? cur.buy : 1) * cur.price;
+    },
+    0
+   );
+   return +result.toFixed(2);
+  },
  },
  actions: {
   addToCart(product) {
@@ -53,6 +62,19 @@ export const useStore = defineStore('magaz', {
   closeCart() {
    document.body.classList.remove('j-lock');
    this.cart.show = false;
+  },
+  addProduct(product) {
+   this.cart.products[this.getIdProductCart(product)].buy!++;
+  },
+  removeProduct(product) {
+   if (this.cart.products[this.getIdProductCart(product)].buy! == 1) {
+    this.cart.products.splice(this.getIdProductCart(product), 1);
+   } else {
+    this.cart.products[this.getIdProductCart(product)].buy!--;
+   }
+  },
+  getIdProductCart(product) {
+   return this.cart.products.findIndex((item) => item.id === product.id);
   },
  },
 });
