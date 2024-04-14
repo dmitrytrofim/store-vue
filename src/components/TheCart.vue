@@ -7,10 +7,10 @@
   >
    <div
     @click.stop
-    class="relative w-[300px] bg-[white] overflow-auto p-[40px_10px_20px]"
+    class="relative w-[300px] flex flex-col bg-[white] overflow-auto p-[40px_10px_20px]"
    >
-    <p class="text-[24px] font-600 text-center">Cart</p>
-    <ul class="flex flex-col gap-[10px]">
+    <p class="text-[24px] font-600 text-center mb-[10px]">Cart</p>
+    <ul class="grow flex flex-col gap-[10px] mb-[20px]">
      <li class="" v-for="product in store.cart.products" :key="product.id">
       <div class="flex items-center gap-[10px]">
        <img
@@ -22,6 +22,7 @@
       </div>
      </li>
     </ul>
+    <span>Total:</span>
     <button
      @click="store.closeCart"
      class="absolute top-[8px] right-[15px]"
