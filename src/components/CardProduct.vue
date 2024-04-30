@@ -1,6 +1,7 @@
 <template>
  <div
-  class="flex flex-col items-center gap-[10px] border-[1px] border-[rgba(0,0,0,0.2)] rounded-[10px] p-[10px] shadow-[0px_0px_24px_-2px_rgba(13,13,13,0.2)]"
+  @click="store.showModal(product)"
+  class="flex flex-col items-center gap-[10px] border-[1px] border-[rgba(0,0,0,0.2)] rounded-[10px] p-[10px] shadow-[0px_0px_24px_-2px_rgba(13,13,13,0.2)] cursor-pointer"
  >
   <p class="self-start max-w-full font-700 truncate">
    {{ product?.title }}
@@ -30,13 +31,13 @@
    <span class="text-[20px] font-600">{{ product?.price }}$</span>
   </div>
   <div class="flex justify-center items-center gap-[10px]">
-   <v-button @click="store.showModal(product)" class="bg-[blue] text-[white]"
-    >More</v-button
-   >
    <v-button
-    @click="store.addToCart(product)"
-    class="bg-[black] text-[white]"
-    >{{ store.cart.products.includes(product!) ? 'Added' : 'Add' }}</v-button
+    @click.stop="store.addToCart(product)"
+    class="text-[white]"
+    :class="store.cart.products.includes(product!) ? 'bg-[green]' : 'bg-[black]'"
+    >{{
+     store.cart.products.includes(product!) ? 'Added' : 'Add to cart'
+    }}</v-button
    >
   </div>
  </div>

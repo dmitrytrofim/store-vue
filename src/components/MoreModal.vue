@@ -30,7 +30,8 @@
      </span>
      <v-button
       @click="store.addToCart(product)"
-      class="bg-[black] text-[white] text-[20px]"
+      class="text-[white] text-[20px]"
+      :class="store.cart.products.includes(product!) ? 'bg-[green]' : 'bg-[black]'"
       >{{
        store.cart.products.includes(product!) ? 'Added' : 'Add to cart'
       }}</v-button
