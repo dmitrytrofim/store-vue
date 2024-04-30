@@ -1,6 +1,7 @@
 /* 
  @mark imports 
 */
+@import url('../node_modules/primevue/resources/themes/aura-light-green/theme.css');
 
 /* 
  @mark root 
@@ -65,4 +66,15 @@
  .i-full {
   @apply absolute top-0 left-0 w-full h-full object-cover object-center;
  }
+}
+
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+ @tailwind base;
+}
+
+@layer tailwind-utilities {
+ @tailwind components;
+ @tailwind utilities;
 }
