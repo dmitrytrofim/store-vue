@@ -1,15 +1,24 @@
 <template>
  <div>
-  <Button>test</Button>
+  <SelectButton v-model="selectedCost" :options="cost" optionLabel="name" />
  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Button from 'primevue/button';
+import SelectButton from 'primevue/selectbutton';
 
 export default defineComponent({
- components: { Button },
+ components: { SelectButton },
  name: 'the-options',
+ data() {
+  return {
+   selectedCost: null,
+   cost: [
+    { name: 'Cost ↑', code: 'up' },
+    { name: 'Cost ↓', code: 'down' },
+   ],
+  };
+ },
 });
 </script>
