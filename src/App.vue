@@ -3,14 +3,17 @@
   <the-header />
   <main class="pt-[85px]">
    <v-container>
-    <div v-if="store.products.length > 0" class="grid grid-cols-4 gap-[20px]">
-     <card-product
-      v-for="product in store.products"
-      :key="product.id"
-      :product="product"
-     />
+    <div class="grid grid-cols-[200px_1fr] gap-[20px]">
+     <the-options />
+     <div v-if="store.products.length > 0" class="grid grid-cols-3 gap-[20px]">
+      <card-product
+       v-for="product in store.products"
+       :key="product.id"
+       :product="product"
+      />
+     </div>
+     <div v-else class="text-[20px] text-center">Loading...</div>
     </div>
-    <div v-else class="text-[20px] text-center">Loading...</div>
    </v-container>
   </main>
   <the-footer />

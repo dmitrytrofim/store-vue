@@ -6,6 +6,7 @@ import VButton from '@components/elements/VButton.vue';
 import MoreModal from '@components/MoreModal.vue';
 import CardProduct from '@components/CardProduct.vue';
 import TheCart from '@components/TheCart.vue';
+import TheOptions from './TheOptions.vue';
 
 export default [
  TheHeader,
@@ -16,4 +17,5 @@ export default [
  MoreModal,
  CardProduct,
  TheCart,
+ TheOptions,
 ];
