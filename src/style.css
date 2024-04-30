@@ -1,7 +1,6 @@
 /* 
  @mark imports 
 */
-@import url('../node_modules/primevue/resources/themes/aura-light-green/theme.css');
 
 /* 
  @mark root 
@@ -30,6 +29,7 @@
 /* 
  @mark tailwind 
 */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

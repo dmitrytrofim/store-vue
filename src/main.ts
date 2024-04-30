@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import '@/style.css';
+import '../node_modules/primevue/resources/themes/aura-light-green/theme.css';
 import App from '@/App.vue';
 import components from '@components/index';
 import { createPinia } from 'pinia';
