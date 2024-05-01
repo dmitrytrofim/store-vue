@@ -6,6 +6,7 @@ export const useStore = defineStore('magaz', {
  state: () => {
   return {
    products: [] as Array<Product>,
+   data: [] as Array<Product>,
    cart: {
     show: false,
     products: [] as Array<Product>,
@@ -22,6 +23,7 @@ export const useStore = defineStore('magaz', {
     let data = await axios
      .get('https://fakestoreapi.com/products')
      .then((response) => response.data);
+    state.data = data;
     state.products = data;
    } catch (error) {
     console.error(error);
@@ -82,6 +84,12 @@ export const useStore = defineStore('magaz', {
     this.products.sort((a, b) => b.rating.rate - a.rating.rate);
    if (choice === 'down')
     this.products.sort((a, b) => a.rating.rate - b.rating.rate);
+  },
+  filterProductsCost(range) {
+   this.products = this.data.filter((prod) => {
+    return prod.price > range[0] && prod.price < range[1];
+   });
+   console.log(range[0]);
   },
   getIdProductCart(product) {
    return this.cart.products.findIndex((item) => item.id === product.id);

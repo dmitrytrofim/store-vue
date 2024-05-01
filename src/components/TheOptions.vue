@@ -13,6 +13,7 @@
    optionLabel="name"
   />
   <vue-slider
+   @dragEnd="filterCost"
    v-model="slider"
    :tooltip="'always'"
    :min="rangeCost.min"
@@ -62,6 +63,9 @@ export default defineComponent({
    const min = Math.floor(Math.min(...arrayCost));
    const max = Math.ceil(Math.max(...arrayCost));
    return { min, max };
+  },
+  filterCost() {
+   this.store.filterProductsCost(this.slider);
   },
  },
  computed: {
