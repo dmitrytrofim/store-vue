@@ -92,7 +92,6 @@ export const useStore = defineStore('magaz', {
    this.products = this.data.filter((prod) => {
     return prod.price > range[0] && prod.price < range[1];
    });
-   console.log(range[0]);
   },
   getIdProductCart(product) {
    return this.cart.products.findIndex((item) => item.id === product.id);

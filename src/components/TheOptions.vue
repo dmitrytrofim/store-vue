@@ -51,12 +51,12 @@ export default defineComponent({
  },
  methods: {
   choiceCost() {
-   this.selectedRating = null;
    this.store.sortCost((this.selectedCost as any)?.code);
+   this.selectedRating = null;
   },
   choiceRating() {
-   this.selectedCost = null;
    this.store.sortRating((this.selectedRating as any)?.code);
+   this.selectedCost = null;
   },
   filterCost() {
    this.store.filterProductsCost(this.slider);
@@ -65,8 +65,14 @@ export default defineComponent({
  watch: {
   'store.rangeCost': {
    handler() {
-    console.log(this.store.rangeCost);
-    this.slider = [this.store.rangeCost.min, this.store.rangeCost.max];
+    this.$nextTick(() => {
+     this.slider = [this.store.rangeCost.min, this.store.rangeCost.max];
+     if (this.selectedCost) console.log(1);
+     if (this.selectedCost)
+      this.store.sortCost((this.selectedCost as any)?.code);
+     if (this.selectedRating)
+      this.store.sortCost((this.selectedRating as any)?.code);
+    });
    },
    deep: true,
   },
