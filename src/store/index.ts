@@ -96,15 +96,18 @@ export const useStore = defineStore('magaz', {
     return prod.price > range[0] && prod.price < range[1];
    });
   },
-  getIdProductCart(product) {
-   return this.cart.products.findIndex((item) => item.id === product.id);
-  },
   setRangeCost() {
    const arrayCost = this.data.map((prod) => prod.price);
    const min = Math.floor(Math.min(...arrayCost));
    const max = Math.ceil(Math.max(...arrayCost));
    this.rangeCost.min = min;
    this.rangeCost.max = max;
+  },
+  resetProducts() {
+   this.products = this.data;
+  },
+  getIdProductCart(product) {
+   return this.cart.products.findIndex((item) => item.id === product.id);
   },
  },
 });

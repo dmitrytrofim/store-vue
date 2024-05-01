@@ -12,7 +12,7 @@
     <p class="text-[24px] font-600 text-center mb-[10px]">Cart</p>
     <ul class="grow flex flex-col gap-[10px] mb-[20px]">
      <li
-      class="border-b-[1px] pb-[10px] mb-[5px]"
+      class="flex flex-col gap-[10px] border-b-[1px] pb-[10px] mb-[5px]"
       v-for="product in store.cart.products"
       :key="product.id"
      >

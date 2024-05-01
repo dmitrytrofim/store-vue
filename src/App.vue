@@ -12,7 +12,18 @@
        :product="product"
       />
      </div>
-     <div v-else class="text-[20px] text-center">Loading...</div>
+     <div
+      v-else-if="store.data.length === 0"
+      class="text-[20px] text-center text-[blue]"
+     >
+      Loading...
+     </div>
+     <div
+      v-else-if="store.products.length === 0"
+      class="text-[20px] text-center text-[red]"
+     >
+      There are no products that meet the requirements...
+     </div>
     </div>
    </v-container>
   </main>

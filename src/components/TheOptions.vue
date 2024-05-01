@@ -1,5 +1,10 @@
 <template>
- <div class="flex flex-col items-center gap-[10px] px-[5px]">
+ <form
+  action="#"
+  method="post"
+  class="flex flex-col items-center gap-[10px] px-[5px]"
+ >
+  <h2 class="text-[20px] font-600">Filters</h2>
   <SelectButton
    @click="choiceCost"
    v-model="selectedCost"
@@ -19,9 +24,14 @@
    :min="store.rangeCost.min"
    :max="store.rangeCost.max"
    :tooltip-placement="['bottom', 'bottom']"
-   class="self-stretch"
+   class="self-stretch mb-[30px]"
   ></vue-slider>
- </div>
+  <v-button
+   @click.prevent="resetFilters()"
+   class="text-[18px] text-[white] bg-[#761616] !p-[10px_20px]"
+   >Reset</v-button
+  >
+ </form>
 </template>
 
 <script lang="ts">
@@ -60,6 +70,12 @@ export default defineComponent({
   },
   filterCost() {
    this.store.filterProductsCost(this.slider);
+  },
+  resetFilters() {
+   this.slider = [this.store.rangeCost.min, this.store.rangeCost.max];
+   this.selectedRating = null;
+   this.selectedCost = null;
+   this.store.resetProducts();
   },
  },
  watch: {
