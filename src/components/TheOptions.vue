@@ -13,9 +13,12 @@
    optionLabel="name"
   />
   <vue-slider
-   v-model="sliderValue"
+   v-model="slider.value"
    :tooltip="'always'"
-   :tooltip-placement="['top', 'bottom']"
+   :min="slider.min"
+   :max="slider.max"
+   :tooltip-placement="['bottom', 'bottom']"
+   class="self-stretch"
   ></vue-slider>
  </div>
 </template>
@@ -23,8 +26,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import SelectButton from 'primevue/selectbutton';
+// @ts-ignore
 import VueSlider from 'vue-slider-component';
-import 'vue-slider-component/theme/antd.css';
 import { useStore } from '@/store';
 
 export default defineComponent({
@@ -43,7 +46,11 @@ export default defineComponent({
     { name: 'Rating ↑', code: 'up' },
     { name: 'Rating ↓', code: 'down' },
    ],
-   sliderValue: [20, 80],
+   slider: {
+    min: 0,
+    max: 200,
+    value: [20, 120],
+   },
   };
  },
  methods: {
@@ -54,6 +61,16 @@ export default defineComponent({
   choiceRating() {
    this.selectedCost = null;
    this.store.sortRating((this.selectedRating as any)?.code);
+  },
+ },
+ computed: {
+  getRangeCost() {
+   const arrayCost = this.store.products.map((prod) => prod.price);
+   const min = Math.min(...arrayCost);
+   const max = Math.max(...arrayCost);
+   this.slider.min = min;
+   this.slider.max = max;
+   this.slider.value = [min, max];
   },
  },
 });
