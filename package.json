@@ -13,6 +13,7 @@
     "pinia": "^2.1.7",
     "primevue": "^3.52.0",
     "vue": "^3.4.21",
+    "vue-3-slider-component": "^0.1.4",
     "vue-slider-component": "^4.1.0-beta.7"
   },
   "devDependencies": {
