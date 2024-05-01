@@ -15,8 +15,8 @@
   <vue-slider
    v-model="slider"
    :tooltip="'always'"
-   :min="getRangeCost.min"
-   :max="getRangeCost.max"
+   :min="rangeCost.min"
+   :max="rangeCost.max"
    :tooltip-placement="['bottom', 'bottom']"
    class="self-stretch"
   ></vue-slider>
@@ -65,7 +65,7 @@ export default defineComponent({
   },
  },
  computed: {
-  getRangeCost() {
+  rangeCost() {
    const { min, max } = this.checkRangeCost();
    return {
     min,
