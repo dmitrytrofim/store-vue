@@ -45,7 +45,7 @@ export default defineComponent({
     { name: 'Rating ↑', code: 'up' },
     { name: 'Rating ↓', code: 'down' },
    ],
-   slider: [0, 0],
+   slider: [] as any,
   };
  },
  methods: {
@@ -75,8 +75,10 @@ export default defineComponent({
  },
  watch: {
   'store.products'() {
-   const { min, max } = this.checkRangeCost();
-   this.slider = [min, max];
+   this.$nextTick(() => {
+    const { min, max } = this.checkRangeCost();
+    this.slider = [min, max];
+   });
   },
  },
 });
