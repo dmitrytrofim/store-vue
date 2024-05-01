@@ -33,13 +33,7 @@ export default defineComponent({
   };
  },
  mounted() {
-  this.store.loadProducts;
-  console.log(this.store.rangeCost);
- },
- computed: {
-  setRangeCost() {
-   this.store.setRangeCost;
-  },
+  this.store.loadProducts();
  },
 });
 </script>

@@ -17,7 +17,7 @@
    v-model="slider"
    :tooltip="'always'"
    :min="store.rangeCost.min"
-   :max="10"
+   :max="store.rangeCost.max"
    :tooltip-placement="['bottom', 'bottom']"
    class="self-stretch"
   ></vue-slider>
@@ -60,6 +60,15 @@ export default defineComponent({
   },
   filterCost() {
    this.store.filterProductsCost(this.slider);
+  },
+ },
+ watch: {
+  'store.rangeCost': {
+   handler() {
+    console.log(this.store.rangeCost);
+    this.slider = [this.store.rangeCost.min, this.store.rangeCost.max];
+   },
+   deep: true,
   },
  },
 });

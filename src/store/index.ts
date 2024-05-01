@@ -21,20 +21,21 @@ export const useStore = defineStore('magaz', {
    },
   };
  },
- getters: {
-  async loadProducts(state) {
+ actions: {
+  async loadProducts() {
    try {
     let data = await axios
      .get('https://fakestoreapi.com/products')
      .then((response) => response.data);
-    state.data = data;
-    state.products = data;
+    this.data = data;
+    this.products = data;
+    this.setRangeCost();
    } catch (error) {
     console.error(error);
    }
   },
-  calcProductCart(state) {
-   const result = state.cart.products.reduce(
+  calcProductCart() {
+   const result = this.cart.products.reduce(
     (acc: number, cur: Product): any => {
      return acc + (cur.buy ? cur.buy : 1) * cur.price;
     },
@@ -42,8 +43,6 @@ export const useStore = defineStore('magaz', {
    );
    return +result.toFixed(2);
   },
- },
- actions: {
   addToCart(product) {
    if (!this.cart.products.includes(product)) {
     product.buy = 1;
@@ -104,7 +103,6 @@ export const useStore = defineStore('magaz', {
    const max = Math.ceil(Math.max(...arrayCost));
    this.rangeCost.min = min;
    this.rangeCost.max = max;
-   console.log(1);
   },
  },
 });
