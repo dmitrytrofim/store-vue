@@ -67,14 +67,17 @@ export default defineComponent({
    handler() {
     this.$nextTick(() => {
      this.slider = [this.store.rangeCost.min, this.store.rangeCost.max];
-     if (this.selectedCost) console.log(1);
-     if (this.selectedCost)
-      this.store.sortCost((this.selectedCost as any)?.code);
-     if (this.selectedRating)
-      this.store.sortCost((this.selectedRating as any)?.code);
     });
    },
    deep: true,
+  },
+  'store.products'() {
+   if (this.selectedCost) {
+    this.store.sortCost((this.selectedCost as any)?.code);
+   }
+   if (this.selectedRating) {
+    this.store.sortRating((this.selectedRating as any)?.code);
+   }
   },
  },
 });
