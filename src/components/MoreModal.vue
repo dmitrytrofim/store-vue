@@ -19,6 +19,16 @@
      loading="lazy"
     />
     <p class="text-[18px] mb-[20px]">{{ store.moreModal.data?.description }}</p>
+    <div class="flex justify-center mb-[10px]">
+     <v-button
+      @click="store.addToCart(product)"
+      class="text-[white] text-[20px] p-[10px_20px]"
+      :class="store.cart.products.includes(product!) ? 'bg-[green]' : 'bg-[black]'"
+      >{{
+       store.cart.products.includes(product!) ? 'Added' : 'Add to cart'
+      }}</v-button
+     >
+    </div>
     <div class="flex items-center justify-between">
      <span class="flex items-center gap-[5px]">
       <span class="text-[30px]">{{ store.moreModal.data?.rating.rate }}</span>
@@ -28,14 +38,6 @@
        alt=""
       />
      </span>
-     <v-button
-      @click="store.addToCart(product)"
-      class="text-[white] text-[20px]"
-      :class="store.cart.products.includes(product!) ? 'bg-[green]' : 'bg-[black]'"
-      >{{
-       store.cart.products.includes(product!) ? 'Added' : 'Add to cart'
-      }}</v-button
-     >
      <span class="text-[30px] font-600"
       >{{ store.moreModal.data?.price }}$</span
      >
