@@ -1,7 +1,17 @@
 <template>
  <div class="flex flex-col gap-[10px]">
-  <SelectButton v-model="selectedCost" :options="cost" optionLabel="name" />
-  <SelectButton v-model="selectedRating" :options="rating" optionLabel="name" />
+  <SelectButton
+   @click="choiceCost"
+   v-model="selectedCost"
+   :options="cost"
+   optionLabel="name"
+  />
+  <SelectButton
+   @click="choiceRating"
+   v-model="selectedRating"
+   :options="rating"
+   optionLabel="name"
+  />
  </div>
 </template>
 
@@ -16,21 +26,26 @@ export default defineComponent({
  data() {
   return {
    store: useStore(),
-   selectedCost: null,
+   selectedCost: null as any,
    cost: [
     { name: 'Cost ↑', code: 'up' },
     { name: 'Cost ↓', code: 'down' },
    ],
-   selectedRating: null,
+   selectedRating: null as any,
    rating: [
     { name: 'Rating ↑', code: 'up' },
     { name: 'Rating ↓', code: 'down' },
    ],
   };
  },
- watch: {
-  selectedCost() {
+ methods: {
+  choiceCost() {
+   this.selectedRating = null;
    this.store.sortCost((this.selectedCost as any)?.code);
+  },
+  choiceRating() {
+   this.selectedCost = null;
+   this.store.sortRating((this.selectedRating as any)?.code);
   },
  },
 });

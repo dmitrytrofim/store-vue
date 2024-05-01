@@ -3,7 +3,7 @@
   <the-header />
   <main class="pt-[85px]">
    <v-container>
-    <div class="grid grid-cols-[200px_1fr] gap-[20px]">
+    <div class="grid grid-cols-[240px_1fr] gap-[20px]">
      <the-options />
      <div v-if="store.products.length > 0" class="grid grid-cols-3 gap-[20px]">
       <card-product

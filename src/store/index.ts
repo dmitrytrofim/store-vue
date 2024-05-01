@@ -77,6 +77,12 @@ export const useStore = defineStore('magaz', {
    if (choice === 'up') this.products.sort((a, b) => b.price - a.price);
    if (choice === 'down') this.products.sort((a, b) => a.price - b.price);
   },
+  sortRating(choice) {
+   if (choice === 'up')
+    this.products.sort((a, b) => b.rating.rate - a.rating.rate);
+   if (choice === 'down')
+    this.products.sort((a, b) => a.rating.rate - b.rating.rate);
+  },
   getIdProductCart(product) {
    return this.cart.products.findIndex((item) => item.id === product.id);
   },
