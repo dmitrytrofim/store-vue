@@ -7,6 +7,10 @@ export const useStore = defineStore('magaz', {
   return {
    products: [] as Array<Product>,
    data: [] as Array<Product>,
+   rangeCost: {
+    min: 0,
+    max: 0,
+   },
    cart: {
     show: false,
     products: [] as Array<Product>,
@@ -93,6 +97,14 @@ export const useStore = defineStore('magaz', {
   },
   getIdProductCart(product) {
    return this.cart.products.findIndex((item) => item.id === product.id);
+  },
+  setRangeCost() {
+   const arrayCost = this.data.map((prod) => prod.price);
+   const min = Math.floor(Math.min(...arrayCost));
+   const max = Math.ceil(Math.max(...arrayCost));
+   this.rangeCost.min = min;
+   this.rangeCost.max = max;
+   console.log(1);
   },
  },
 });

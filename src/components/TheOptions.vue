@@ -16,8 +16,8 @@
    @dragEnd="filterCost"
    v-model="slider"
    :tooltip="'always'"
-   :min="rangeCost.min"
-   :max="rangeCost.max"
+   :min="store.rangeCost.min"
+   :max="10"
    :tooltip-placement="['bottom', 'bottom']"
    class="self-stretch"
   ></vue-slider>
@@ -58,31 +58,8 @@ export default defineComponent({
    this.selectedCost = null;
    this.store.sortRating((this.selectedRating as any)?.code);
   },
-  checkRangeCost() {
-   const arrayCost = this.store.products.map((prod) => prod.price);
-   const min = Math.floor(Math.min(...arrayCost));
-   const max = Math.ceil(Math.max(...arrayCost));
-   return { min, max };
-  },
   filterCost() {
    this.store.filterProductsCost(this.slider);
-  },
- },
- computed: {
-  rangeCost() {
-   const { min, max } = this.checkRangeCost();
-   return {
-    min,
-    max,
-   };
-  },
- },
- watch: {
-  'store.products'() {
-   this.$nextTick(() => {
-    const { min, max } = this.checkRangeCost();
-    this.slider = [min, max];
-   });
   },
  },
 });
