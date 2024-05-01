@@ -7,7 +7,7 @@
      <the-options />
      <div v-if="store.products.length > 0" class="grid grid-cols-3 gap-[20px]">
       <card-product
-       v-for="product in store.products"
+       v-for="product in store.products.slice(0, 6)"
        :key="product.id"
        :product="product"
       />
