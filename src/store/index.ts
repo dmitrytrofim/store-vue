@@ -71,12 +71,15 @@ export const useStore = defineStore('magaz', {
   addProduct(product) {
    this.cart.products[this.getIdProductCart(product)].buy!++;
   },
-  removeProduct(product) {
-   if (this.cart.products[this.getIdProductCart(product)].buy! == 1) {
-    this.cart.products.splice(this.getIdProductCart(product), 1);
-   } else {
+  minusProduct(product) {
+   if (this.cart.products[this.getIdProductCart(product)].buy! > 1) {
     this.cart.products[this.getIdProductCart(product)].buy!--;
+   } else {
+    this.cart.products[this.getIdProductCart(product)].buy! = 1;
    }
+  },
+  removeProduct(product) {
+   this.cart.products.splice(this.getIdProductCart(product), 1);
   },
   sortCost(choice) {
    if (choice === 'up') this.products.sort((a, b) => b.price - a.price);

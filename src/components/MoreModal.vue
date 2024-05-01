@@ -7,7 +7,7 @@
   >
    <div
     @click.stop
-    class="relative w-full max-w-[500px] flex flex-col m-auto bg-[#fff] p-[30px_10px_20px] rounded-[20px]"
+    class="relative w-full max-w-[500px] flex flex-col m-auto bg-[#fff] p-[40px_10px_20px] rounded-[20px]"
    >
     <p class="text-[26px] font-700 text-center mb-[10px]">
      {{ store.moreModal.data?.title }}
@@ -22,7 +22,7 @@
     <div class="flex justify-center mb-[10px]">
      <v-button
       @click="store.addToCart(product)"
-      class="text-[white] text-[20px] p-[10px_20px]"
+      class="text-[white] text-[20px] !p-[10px_20px]"
       :class="store.cart.products.includes(product!) ? 'bg-[green]' : 'bg-[black]'"
       >{{
        store.cart.products.includes(product!) ? 'Added' : 'Add to cart'
@@ -44,7 +44,7 @@
     </div>
     <button
      @click="store.closeModal"
-     class="absolute top-[8px] right-[15px]"
+     class="absolute top-[8px] right-[15px] text-[24px]"
      type="button"
     >
      &#10006;

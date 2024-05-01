@@ -11,18 +11,23 @@
    >
     <p class="text-[24px] font-600 text-center mb-[10px]">Cart</p>
     <ul class="grow flex flex-col gap-[10px] mb-[20px]">
-     <li class="" v-for="product in store.cart.products" :key="product.id">
+     <li
+      class="border-b-[1px] pb-[10px] mb-[5px]"
+      v-for="product in store.cart.products"
+      :key="product.id"
+     >
       <div class="flex items-center gap-[10px]">
        <img
         class="shrink-0 w-[50px] aspect-square object-contain object-center"
         :src="product.image"
         alt=""
        />
-       <p class="">{{ product.title }}</p>
+       <p class="grow">{{ product.title }}</p>
+       <button @click="store.removeProduct(product)" class="">&#10006;</button>
       </div>
       <div class="flex justify-center items-center gap-[5px]">
        <button
-        @click="store.removeProduct(product)"
+        @click="store.minusProduct(product)"
         class="w-[20px] h-[20px] bg-[black] rounded-full text-[white]"
         type="button"
        >
@@ -41,7 +46,7 @@
     </ul>
     <div class="flex justify-between items-center">
      <span class="text-[20px] font-600"
-      >Total: {{ store.calcProductCart }}$</span
+      >Total: {{ store.calcProductCart() }}$</span
      >
      <button
       v-if="store.cart.products.length > 0"
@@ -52,7 +57,7 @@
     </div>
     <button
      @click="store.closeCart"
-     class="absolute top-[8px] right-[15px]"
+     class="absolute top-[8px] right-[15px] text-[24px]"
      type="button"
     >
      &#10006;
