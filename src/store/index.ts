@@ -104,7 +104,7 @@ export const useStore = defineStore('magaz', {
    this.rangeCost.max = max;
   },
   resetProducts() {
-   this.products = this.data;
+   this.products = [...this.data];
   },
   getIdProductCart(product) {
    return this.cart.products.findIndex((item) => item.id === product.id);
