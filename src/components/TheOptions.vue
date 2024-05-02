@@ -38,7 +38,7 @@
 import { defineComponent } from 'vue';
 import SelectButton from 'primevue/selectbutton';
 import VueSlider from 'vue-3-slider-component';
-import { useStore } from '@/store';
+import { useStore } from '@/store/store';
 
 export default defineComponent({
  components: { SelectButton, VueSlider },

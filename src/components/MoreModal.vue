@@ -57,7 +57,7 @@
 <script lang="ts">
 import { PropType, defineComponent } from 'vue';
 import { Product } from '@/model';
-import { useStore } from '@/store';
+import { useStore } from '@/store/store';
 
 export default defineComponent({
  name: 'more-modal',

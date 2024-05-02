@@ -2,6 +2,7 @@
  <the-wrapper>
   <the-header />
   <main class="pt-[85px]">
+   {{ store.pages.length }}
    <v-container>
     <div class="grid grid-cols-[240px_1fr] gap-[20px]">
      <the-options />
@@ -35,7 +36,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useStore } from './store';
+import { useStore } from './store/store';
 
 export default defineComponent({
  setup() {

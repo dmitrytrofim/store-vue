@@ -46,7 +46,7 @@
 <script lang="ts">
 import { Product } from '@/model';
 import { PropType, defineComponent } from 'vue';
-import { useStore } from '@/store';
+import { useStore } from '@/store/store';
 
 export default defineComponent({
  name: 'card-product',

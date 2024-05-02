@@ -69,7 +69,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useStore } from '@/store';
+import { useStore } from '@/store/store';
 
 export default defineComponent({
  name: 'the-cart',

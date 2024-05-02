@@ -19,16 +19,12 @@ export const useStore = defineStore('magaz', {
     show: false,
     data: {} as Product,
    },
-   navigation: {
-    pages: 0,
+   pages: {
+    length: 0,
     limit: 6,
+    current: 1,
    },
   };
- },
- getters: {
-  getPagesProducts(state) {
-   state.navigation.pages = state.data.length / state.navigation.limit;
-  },
  },
  actions: {
   async loadProducts() {
@@ -39,7 +35,7 @@ export const useStore = defineStore('magaz', {
     this.data = data;
     this.products = data;
     this.setRangeCost();
-    this.getPagesProducts;
+    this.getPagesProducts();
    } catch (error) {
     console.error(error);
    }
@@ -118,6 +114,9 @@ export const useStore = defineStore('magaz', {
   },
   getIdProductCart(product) {
    return this.cart.products.findIndex((item) => item.id === product.id);
+  },
+  getPagesProducts() {
+   this.pages.length = Math.ceil(this.data.length / this.pages.limit);
   },
  },
 });
