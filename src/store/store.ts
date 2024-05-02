@@ -11,6 +11,7 @@ export const useStore = defineStore('magaz', {
     min: 0,
     max: 0,
    },
+   sliderCost: [],
    cart: {
     show: false,
     products: [] as Array<Product>,
@@ -24,6 +25,7 @@ export const useStore = defineStore('magaz', {
     limit: 6,
     current: 1,
    },
+   search: false,
   };
  },
  getters: {
@@ -133,6 +135,19 @@ export const useStore = defineStore('magaz', {
   },
   setCurrentPage(page) {
    this.pages.current = page;
+  },
+  searchProducts(text) {
+   this.products = this.data.filter((prod) => {
+    return prod.title
+     .toLocaleLowerCase()
+     .includes(text.toLocaleLowerCase().trim());
+   });
+  },
+  setSliderCost(slider) {
+   this.sliderCost = slider;
+  },
+  setSearch(set) {
+   this.search = set;
   },
  },
 });

@@ -4,10 +4,21 @@
   <main class="pt-[85px]">
    <v-container>
     <div class="grid grid-cols-[240px_1fr] gap-[20px]">
-     <IconField class="col-[2/3] m-[0_auto_10px]" iconPosition="left">
-      <InputIcon class="pi pi-search"></InputIcon>
-      <InputText v-model="search" placeholder="Search" />
-     </IconField>
+     <div class="col-[2/3] m-[0_auto_10px]">
+      <InputGroup class="">
+       <Button
+        @click="searchProducts"
+        icon="pi pi-search"
+        severity="contrast"
+       />
+       <InputText
+        @keyup.enter="searchProducts"
+        v-model="search"
+        placeholder="Search"
+       />
+       <Button @click="search = ''" icon="pi pi-times" severity="contrast" />
+      </InputGroup>
+     </div>
      <the-options />
      <div v-if="store.products.length > 0" class="grid grid-cols-3 gap-[20px]">
       <card-product
@@ -53,12 +64,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useStore } from './store/store';
-import IconField from 'primevue/iconfield';
+import InputGroup from 'primevue/inputgroup';
 import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
+import Button from 'primevue/button';
 
 export default defineComponent({
- components: { IconField, InputIcon, InputText },
+ components: { InputGroup, InputIcon, InputText, Button },
  setup() {
   const store = useStore();
   return {
@@ -70,8 +82,23 @@ export default defineComponent({
    search: '',
   };
  },
+ methods: {
+  searchProducts() {
+   this.store.searchProducts(this.search);
+   this.store.setSearch(true);
+   this.store.setCurrentPage(1);
+  },
+ },
  mounted() {
   this.store.loadProducts();
+ },
+ watch: {
+  'store.sliderCost': {
+   handler() {
+    this.search = '';
+   },
+   deep: true,
+  },
  },
 });
 </script>

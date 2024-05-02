@@ -27,6 +27,7 @@
         &#10006;
        </button>
       </div>
+      <span class="text-[20px] font-600 text-center">{{ product.price }}$</span>
       <div class="flex justify-center items-center gap-[5px]">
        <button
         @click="store.minusProduct(product)"
@@ -59,7 +60,7 @@
       v-if="store.cart.products.length > 0"
       class="font-600 text-[20px] text-[white] p-[5px_10px] bg-[green] rounded-[5px]"
      >
-      To Pay
+      Order
      </button>
      <button
       @click="store.removeAll"
