@@ -118,5 +118,8 @@ export const useStore = defineStore('magaz', {
   getPagesProducts() {
    this.pages.length = Math.ceil(this.data.length / this.pages.limit);
   },
+  setCurrentPage(page) {
+   this.pages.current = page;
+  },
  },
 });

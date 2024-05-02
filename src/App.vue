@@ -2,7 +2,6 @@
  <the-wrapper>
   <the-header />
   <main class="pt-[85px]">
-   {{ store.pages.length }}
    <v-container>
     <div class="grid grid-cols-[240px_1fr] gap-[20px]">
      <the-options />
@@ -24,6 +23,16 @@
       class="text-[20px] text-center text-[red]"
      >
       There are no products that meet the requirements...
+     </div>
+     <div class="flex items-center justify-center gap-[10px] col-[2/3]">
+      <button
+       @click="store.setCurrentPage(page)"
+       class="w-[30px] text-[20px] border"
+       :class="store.pages.current === page ? 'bg-[black] text-[white]' : ''"
+       v-for="page in store.pages.length"
+      >
+       {{ page }}
+      </button>
      </div>
     </div>
    </v-container>
