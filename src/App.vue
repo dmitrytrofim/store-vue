@@ -4,6 +4,10 @@
   <main class="pt-[85px]">
    <v-container>
     <div class="grid grid-cols-[240px_1fr] gap-[20px]">
+     <IconField class="col-[2/3] m-[0_auto_10px]" iconPosition="left">
+      <InputIcon class="pi pi-search"></InputIcon>
+      <InputText v-model="search" placeholder="Search" />
+     </IconField>
      <the-options />
      <div v-if="store.products.length > 0" class="grid grid-cols-3 gap-[20px]">
       <card-product
@@ -49,8 +53,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useStore } from './store/store';
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
+import InputText from 'primevue/inputtext';
 
 export default defineComponent({
+ components: { IconField, InputIcon, InputText },
  setup() {
   const store = useStore();
   return {
@@ -58,7 +66,9 @@ export default defineComponent({
   };
  },
  data() {
-  return {};
+  return {
+   search: '',
+  };
  },
  mounted() {
   this.store.loadProducts();
