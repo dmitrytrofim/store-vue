@@ -23,7 +23,9 @@
         alt=""
        />
        <p class="grow">{{ product.title }}</p>
-       <button @click="store.removeProduct(product)" class="">&#10006;</button>
+       <button @click="store.removeProduct(product)" class="mr-[5px]">
+        &#10006;
+       </button>
       </div>
       <div class="flex justify-center items-center gap-[5px]">
        <button
@@ -44,15 +46,27 @@
       </div>
      </li>
     </ul>
-    <div class="flex justify-between items-center">
-     <span class="text-[20px] font-600"
-      >Total: {{ store.calcProductCart() }}$</span
+    <div class="flex justify-center">
+     <span class="text-[26px] font-600 mb-[20px]"
+      >Total:
+      <span class="text-[red] font-700"
+       >{{ store.calcProductCart() }}$</span
+      ></span
      >
+    </div>
+    <div class="flex justify-evenly items-center">
      <button
       v-if="store.cart.products.length > 0"
       class="font-600 text-[20px] text-[white] p-[5px_10px] bg-[green] rounded-[5px]"
      >
       To Pay
+     </button>
+     <button
+      @click="store.removeAll"
+      v-if="store.cart.products.length > 0"
+      class="font-600 text-[20px] text-[white] p-[5px_10px] bg-[black] rounded-[5px]"
+     >
+      Remove ALL
      </button>
     </div>
     <button
