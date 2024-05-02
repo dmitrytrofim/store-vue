@@ -73,10 +73,14 @@ import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'the-cart',
- data() {
+ setup() {
+  const store = useStore();
   return {
-   store: useStore(),
+   store,
   };
+ },
+ data() {
+  return {};
  },
 });
 </script>

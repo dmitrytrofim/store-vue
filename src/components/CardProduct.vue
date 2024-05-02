@@ -50,10 +50,14 @@ import { useStore } from '@/store';
 
 export default defineComponent({
  name: 'card-product',
- data() {
+ setup() {
+  const store = useStore();
   return {
-   store: useStore(),
+   store,
   };
+ },
+ data() {
+  return {};
  },
  props: {
   product: Object as PropType<Product>,

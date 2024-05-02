@@ -19,7 +19,16 @@ export const useStore = defineStore('magaz', {
     show: false,
     data: {} as Product,
    },
+   navigation: {
+    pages: 0,
+    limit: 6,
+   },
   };
+ },
+ getters: {
+  getPagesProducts(state) {
+   state.navigation.pages = state.data.length / state.navigation.limit;
+  },
  },
  actions: {
   async loadProducts() {
@@ -30,6 +39,7 @@ export const useStore = defineStore('magaz', {
     this.data = data;
     this.products = data;
     this.setRangeCost();
+    this.getPagesProducts;
    } catch (error) {
     console.error(error);
    }

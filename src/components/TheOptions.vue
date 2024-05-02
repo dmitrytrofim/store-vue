@@ -43,9 +43,14 @@ import { useStore } from '@/store';
 export default defineComponent({
  components: { SelectButton, VueSlider },
  name: 'the-options',
+ setup() {
+  const store = useStore();
+  return {
+   store,
+  };
+ },
  data() {
   return {
-   store: useStore(),
    selectedCost: null as any,
    cost: [
     { name: 'Cost ↑', code: 'up' },
