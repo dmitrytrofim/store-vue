@@ -7,7 +7,10 @@
      <the-options />
      <div v-if="store.products.length > 0" class="grid grid-cols-3 gap-[20px]">
       <card-product
-       v-for="product in store.products.slice(0, 6)"
+       v-for="product in store.products.slice(
+        store.getPage,
+        store.getPageProducts
+       )"
        :key="product.id"
        :product="product"
       />
@@ -29,7 +32,7 @@
        @click="store.setCurrentPage(page)"
        class="w-[30px] text-[20px] border"
        :class="store.pages.current === page ? 'bg-[black] text-[white]' : ''"
-       v-for="page in store.pages.length"
+       v-for="page in store.getPagesProducts"
       >
        {{ page }}
       </button>
