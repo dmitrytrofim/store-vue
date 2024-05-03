@@ -58,6 +58,7 @@
     <div class="flex justify-evenly items-center">
      <button
       v-if="store.cart.products.length > 0"
+      @click="store.showOrderModal"
       class="font-600 text-[20px] text-[white] p-[5px_10px] bg-[green] rounded-[5px]"
      >
       Order

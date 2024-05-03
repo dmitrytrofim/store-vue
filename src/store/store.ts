@@ -26,6 +26,7 @@ export const useStore = defineStore('magaz', {
     current: 1,
    },
    search: false,
+   orderModal: false,
   };
  },
  getters: {
@@ -148,6 +149,15 @@ export const useStore = defineStore('magaz', {
   },
   setSearch(set) {
    this.search = set;
+  },
+  showOrderModal() {
+   this.orderModal = true;
+   document.body.classList.add('j-lock');
+   this.cart.show = false;
+  },
+  closeOrderModal() {
+   this.orderModal = false;
+   document.body.classList.remove('j-lock');
   },
  },
 });
