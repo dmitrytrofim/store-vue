@@ -7,6 +7,7 @@ import MoreModal from '@components/MoreModal.vue';
 import CardProduct from '@components/CardProduct.vue';
 import TheCart from '@components/TheCart.vue';
 import TheOptions from './TheOptions.vue';
+import OrderModal from './OrderModal.vue';
 
 export default [
  TheHeader,
@@ -18,4 +19,5 @@ export default [
  CardProduct,
  TheCart,
  TheOptions,
+ OrderModal,
 ];
