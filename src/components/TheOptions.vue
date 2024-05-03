@@ -2,7 +2,7 @@
  <form
   action="#"
   method="post"
-  class="flex flex-col items-center gap-[10px] px-[5px]"
+  class="flex flex-col items-center gap-[10px] px-[5px] max-[768px]:px-0"
  >
   <h2 class="text-[20px] font-600">Filters</h2>
   <SelectButton
@@ -27,7 +27,7 @@
    :min="store.rangeCost.min"
    :max="store.rangeCost.max"
    :tooltip-placement="['bottom', 'bottom']"
-   class="self-stretch mb-[30px]"
+   class="self-stretch mb-[30px] max-[768px]:mx-[20px]"
   ></vue-slider>
   <v-button
    @click.prevent="resetFilters()"

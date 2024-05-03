@@ -3,8 +3,8 @@
   <the-header />
   <main class="pt-[85px]">
    <v-container>
-    <div class="grid grid-cols-[240px_1fr] gap-[20px]">
-     <div class="col-[2/3] m-[0_auto_10px]">
+    <div class="grid grid-cols-[240px_1fr] gap-[20px] max-[768px]:grid-cols-1">
+     <div class="col-[2/3] m-[0_auto_10px] max-[768px]:col-auto">
       <InputGroup class="">
        <Button
         @click="searchProducts"
@@ -20,7 +20,10 @@
       </InputGroup>
      </div>
      <the-options />
-     <div v-if="store.products.length > 0" class="grid grid-cols-3 gap-[20px]">
+     <div
+      v-if="store.products.length > 0"
+      class="grid grid-cols-3 gap-[20px] max-[1024px]:grid-cols-2 max-[640px]:gap-[5px]"
+     >
       <card-product
        v-for="product in store.products.slice(
         store.getPage,
@@ -42,7 +45,9 @@
      >
       There are no products that meet the requirements...
      </div>
-     <div class="flex items-center justify-center gap-[10px] col-[2/3]">
+     <div
+      class="flex items-center justify-center gap-[10px] col-[2/3] max-[768px]:col-auto"
+     >
       <button
        @click="store.setCurrentPage(page)"
        class="w-[30px] text-[20px] border"
