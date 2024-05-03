@@ -2,9 +2,11 @@
  <transition name="order">
   <div
    v-if="store.orderModal"
+   @click="store.closeOrderModal"
    class="fixed top-0 bottom-0 w-full h-dvh flex bg-[rgba(0,0,0,0.3)] z-[3000] overflow-y-auto"
   >
    <div
+    @click.stop
     class="relative w-full max-w-[600px] bg-[white] rounded-[20px] p-[40px_20px_20px] m-[auto]"
    >
     <h2 class="text-[30px] font-600 text-center mb-[20px]">Your order</h2>
@@ -34,7 +36,11 @@
       To pay
      </button>
     </div>
-    <button class="absolute top-[8px] right-[15px] text-[24px]" type="button">
+    <button
+     class="absolute top-[8px] right-[15px] text-[24px]"
+     @click="store.closeOrderModal"
+     type="button"
+    >
      &#10006;
     </button>
    </div>
