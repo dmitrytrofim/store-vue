@@ -51,7 +51,7 @@
      <span class="text-[26px] font-600 mb-[20px]"
       >Total:
       <span class="text-[red] font-700"
-       >{{ store.calcProductCart() }}$</span
+       >{{ store.calcProductCart }}$</span
       ></span
      >
     </div>

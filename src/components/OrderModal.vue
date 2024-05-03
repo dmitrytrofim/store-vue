@@ -12,7 +12,7 @@
     <h2 class="text-[30px] font-600 text-center mb-[20px]">Your order</h2>
     <ul class="flex flex-col gap-[15px] mb-[20px]">
      <li
-      class="grid grid-cols-[auto_1fr_auto_auto_60px] items-center gap-[10px]"
+      class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-[10px]"
       v-for="product in store.cart.products"
      >
       <img
@@ -23,12 +23,14 @@
       <p class="text-[14px]">{{ product.title }}</p>
       <div class="">{{ product.buy }} * {{ product.price }}$</div>
       <span class="">=</span>
-      <span class="font-600">{{ product.buy! * product.price }}$</span>
+      <span class="font-600"
+       >{{ (product.buy! * product.price).toFixed(2) }}$</span
+      >
      </li>
     </ul>
     <div class="flex justify-between items-center">
      <span class="text-[24px] font-600"
-      >Total: {{ store.calcProductCart() }}$</span
+      >Total: {{ store.calcProductCart }}$</span
      >
      <button
       class="font-600 text-[24px] text-[white] p-[5px_10px] bg-[green] rounded-[5px]"

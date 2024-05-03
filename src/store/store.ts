@@ -39,6 +39,15 @@ export const useStore = defineStore('magaz', {
   getPagesProducts(state) {
    return Math.ceil(state.products.length / state.pages.limit);
   },
+  calcProductCart(state) {
+   const result = state.cart.products.reduce(
+    (acc: number, cur: Product): any => {
+     return acc + (cur.buy ? cur.buy : 1) * cur.price;
+    },
+    0
+   );
+   return +result.toFixed(2);
+  },
  },
  actions: {
   async loadProducts() {
@@ -53,15 +62,7 @@ export const useStore = defineStore('magaz', {
     console.error(error);
    }
   },
-  calcProductCart() {
-   const result = this.cart.products.reduce(
-    (acc: number, cur: Product): any => {
-     return acc + (cur.buy ? cur.buy : 1) * cur.price;
-    },
-    0
-   );
-   return +result.toFixed(2);
-  },
+
   addToCart(product) {
    if (!this.cart.products.includes(product)) {
     product.buy = 1;
