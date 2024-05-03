@@ -3,16 +3,16 @@
   <div
    v-if="store.orderModal"
    @click="store.closeOrderModal"
-   class="fixed top-0 bottom-0 w-full h-dvh flex bg-[rgba(0,0,0,0.3)] z-[3000] overflow-y-auto"
+   class="fixed top-0 bottom-0 w-full h-dvh flex bg-[rgba(0,0,0,0.3)] z-[3000] overflow-y-auto p-[10px]"
   >
    <div
     @click.stop
     class="relative w-full max-w-[600px] bg-[white] rounded-[20px] p-[40px_20px_20px] m-[auto]"
    >
     <h2 class="text-[30px] font-600 text-center mb-[20px]">Your order</h2>
-    <ul class="flex flex-col gap-[15px] mb-[20px]">
+    <ul class="flex flex-col mb-[20px]">
      <li
-      class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-[10px]"
+      class="grid grid-cols-[auto_1fr_auto] items-center gap-[10px] py-[5px] border-b-[1px] first:border-t-[1px] max-[640px]:grid-cols-1 max-[640px]:justify-items-center max-[640px]:text-center"
       v-for="product in store.cart.products"
      >
       <img
@@ -21,19 +21,20 @@
        alt=""
       />
       <p class="text-[14px]">{{ product.title }}</p>
-      <div class="">{{ product.buy }} * {{ product.price }}$</div>
-      <span class="">=</span>
-      <span class="font-600"
-       >{{ (product.buy! * product.price).toFixed(2) }}$</span
-      >
+      <div class="">
+       {{ product.buy }} * {{ product.price }}$ =
+       <span class="font-600"
+        >{{ (product.buy! * product.price).toFixed(2) }}$</span
+       >
+      </div>
      </li>
     </ul>
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center gap-[10px]">
      <span class="text-[24px] font-600"
       >Total: <span class="text-[red]">{{ store.calcProductCart }}$</span></span
      >
      <button
-      class="font-600 text-[24px] text-[white] p-[5px_10px] bg-[green] rounded-[5px]"
+      class="font-600 text-[24px] text-[white] p-[5px_10px] bg-[green] rounded-[5px] whitespace-nowrap"
      >
       To pay
      </button>
