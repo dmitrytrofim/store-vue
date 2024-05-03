@@ -57,6 +57,7 @@
   </main>
   <the-footer />
   <more-modal :show="store.moreModal.show" :product="store.moreModal.data" />
+  <order-modal />
   <the-cart />
  </the-wrapper>
 </template>
