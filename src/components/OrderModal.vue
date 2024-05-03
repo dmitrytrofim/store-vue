@@ -30,7 +30,7 @@
     </ul>
     <div class="flex justify-between items-center">
      <span class="text-[24px] font-600"
-      >Total: {{ store.calcProductCart }}$</span
+      >Total: <span class="text-[red]">{{ store.calcProductCart }}$</span></span
      >
      <button
       class="font-600 text-[24px] text-[white] p-[5px_10px] bg-[green] rounded-[5px]"

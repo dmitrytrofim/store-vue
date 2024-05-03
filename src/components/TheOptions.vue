@@ -9,12 +9,14 @@
    @click="choiceCost"
    v-model="selectedCost"
    :options="cost"
+   :allowEmpty="false"
    optionLabel="name"
   />
   <SelectButton
    @click="choiceRating"
    v-model="selectedRating"
    :options="rating"
+   :allowEmpty="false"
    optionLabel="name"
   />
   <vue-slider

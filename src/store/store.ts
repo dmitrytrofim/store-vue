@@ -100,9 +100,13 @@ export const useStore = defineStore('magaz', {
   },
   removeProduct(product) {
    this.cart.products.splice(this.getIdProductCart(product), 1);
+   if (this.cart.products.length === 0) this.cart.show = false;
   },
   removeAll() {
-   if (window.confirm('Are you sure?')) this.cart.products = [];
+   if (window.confirm('Are you sure?')) {
+    this.cart.products = [];
+    this.cart.show = false;
+   }
   },
   sortCost(choice) {
    if (choice === 'up') this.products.sort((a, b) => b.price - a.price);
