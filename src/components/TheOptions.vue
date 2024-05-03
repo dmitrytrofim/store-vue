@@ -84,10 +84,10 @@ export default defineComponent({
    this.slider = [this.store.rangeCost.min, this.store.rangeCost.max];
    this.selectedRating = null;
    this.selectedCost = null;
-   this.store.resetProducts();
    this.store.setSliderCost(this.slider);
    this.store.setSearch(false);
    this.store.setCurrentPage(1);
+   this.store.resetProducts();
   },
  },
  watch: {

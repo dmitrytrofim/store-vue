@@ -56,7 +56,7 @@ export const useStore = defineStore('magaz', {
      .get('https://fakestoreapi.com/products')
      .then((response) => response.data);
     this.data = data;
-    this.products = data;
+    this.products = [...data];
     this.setRangeCost();
    } catch (error) {
     console.error(error);
