@@ -55,8 +55,8 @@ export const useStore = defineStore('magaz', {
     let data = await axios
      .get('https://fakestoreapi.com/products')
      .then((response) => response.data);
-    this.data = data;
-    this.products = [...data];
+    this.data = [...data];
+    this.products = data;
     this.setRangeCost();
    } catch (error) {
     console.error(error);
@@ -100,12 +100,16 @@ export const useStore = defineStore('magaz', {
   },
   removeProduct(product) {
    this.cart.products.splice(this.getIdProductCart(product), 1);
-   if (this.cart.products.length === 0) this.cart.show = false;
+   if (this.cart.products.length === 0) {
+    this.cart.show = false;
+    document.body.classList.remove('j-lock');
+   }
   },
   removeAll() {
    if (window.confirm('Are you sure?')) {
     this.cart.products = [];
     this.cart.show = false;
+    document.body.classList.remove('j-lock');
    }
   },
   sortCost(choice) {
