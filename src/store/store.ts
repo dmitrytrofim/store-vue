@@ -62,7 +62,6 @@ export const useStore = defineStore('magaz', {
     console.error(error);
    }
   },
-
   addToCart(product) {
    if (!this.cart.products.includes(product)) {
     product.buy = 1;
