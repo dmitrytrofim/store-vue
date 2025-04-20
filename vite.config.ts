@@ -4,7 +4,7 @@ import { ViteAliases } from 'vite-aliases';
 
 // https://vitejs.dev/config/
 export default defineConfig({
- base: '/portfolio/works/store-vue/',
+ base: '/',
  plugins: [
   vue(),
   ViteAliases({
